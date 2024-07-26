@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: coupon-service
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: false
+        hbm2ddl:
+          connection:
+            charset: utf8ㅎ
+
+# DB 설정
+  datasource:
+    hikari:
+      maximum-pool-size: 50
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/coupon?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+
+  # Redis 설정
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: 1234
+server:
+  port: 0
+
+
+# Eureka 설정
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+#logging:
+#  level:
+#    org:
+#      redisson: DEBUG
+#      hibernate: DEBUG
+#      springframework:
+#        orm.jpa: DEBUG
+#        transaction: DEBUG
+
+

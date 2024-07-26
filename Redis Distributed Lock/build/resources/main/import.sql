@@ -1,0 +1,1 @@
+# insert into coupon (coupon_issued_quantity, coupon_quantity, coupon_name) VALUE (0, 1000, '테스트 쿠폰');

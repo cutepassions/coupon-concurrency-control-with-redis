@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Redis 분산 락 테스트</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Redis 분산 락 테스트</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.example.coupon.html">org.example.coupon</a> &gt; DistributedLockTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">55.563s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">50%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="일반_테스트()"></a>
+<h3 class="failures">일반_테스트()</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;0&gt; but was: &lt;56&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:161)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:632)
+	at app//org.example.coupon.DistributedLockTest.일반_테스트(DistributedLockTest.java:76)
+	at java.base@17.0.8.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.8.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.8.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">분산_락_테스트()</td>
+<td class="success">38.226s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">일반_테스트()</td>
+<td class="failures">17.337s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>02:12:24.872 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.example.coupon.DistributedLockTest]: DistributedLockTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+02:12:25.006 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.example.coupon.CouponApplication for test class org.example.coupon.DistributedLockTest
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-07-27T02:12:25.570+09:00  INFO 34016 --- [coupon-service] [    Test worker] org.example.coupon.DistributedLockTest   : Starting DistributedLockTest using Java 17.0.8.1 with PID 34016 (started by Home in C:\Users\Home\Downloads\레디스 동시성 제어)
+2024-07-27T02:12:25.572+09:00  INFO 34016 --- [coupon-service] [    Test worker] org.example.coupon.DistributedLockTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-07-27T02:12:26.682+09:00  INFO 34016 --- [coupon-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-27T02:12:26.685+09:00  INFO 34016 --- [coupon-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-27T02:12:26.986+09:00  INFO 34016 --- [coupon-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 292 ms. Found 1 JPA repository interface.
+2024-07-27T02:12:27.004+09:00  INFO 34016 --- [coupon-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-27T02:12:27.006+09:00  INFO 34016 --- [coupon-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-07-27T02:12:27.025+09:00  INFO 34016 --- [coupon-service] [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.coupon.coupon.CouponRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2024-07-27T02:12:27.025+09:00  INFO 34016 --- [coupon-service] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-07-27T02:12:27.814+09:00  INFO 34016 --- [coupon-service] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-27T02:12:27.908+09:00  INFO 34016 --- [coupon-service] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-27T02:12:27.959+09:00  INFO 34016 --- [coupon-service] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-27T02:12:28.410+09:00  INFO 34016 --- [coupon-service] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-27T02:12:28.447+09:00  INFO 34016 --- [coupon-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-27T02:12:28.697+09:00  INFO 34016 --- [coupon-service] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2911db81
+2024-07-27T02:12:28.700+09:00  INFO 34016 --- [coupon-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-27T02:12:29.823+09:00  INFO 34016 --- [coupon-service] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-27T02:12:29.883+09:00  INFO 34016 --- [coupon-service] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-27T02:12:30.092+09:00  INFO 34016 --- [coupon-service] [    Test worker] org.redisson.Version                     : Redisson 3.33.0
+2024-07-27T02:12:30.672+09:00  INFO 34016 --- [coupon-service] [isson-netty-1-6] o.redisson.connection.ConnectionsHolder  : 1 connections initialized for localhost/127.0.0.1:6379
+2024-07-27T02:12:30.766+09:00  INFO 34016 --- [coupon-service] [sson-netty-1-20] o.redisson.connection.ConnectionsHolder  : 24 connections initialized for localhost/127.0.0.1:6379
+2024-07-27T02:12:31.635+09:00  WARN 34016 --- [coupon-service] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-27T02:12:32.978+09:00  INFO 34016 --- [coupon-service] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-07-27T02:12:33.060+09:00  INFO 34016 --- [coupon-service] [    Test worker] org.example.coupon.DistributedLockTest   : Started DistributedLockTest in 7.847 seconds (process running for 9.41)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at 2024. 7. 27. 오전 2:13:31</p>
+</div>
+</div>
+</body>
+</html>

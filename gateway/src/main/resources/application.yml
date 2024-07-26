@@ -1,0 +1,25 @@
+#  서비스 설정
+spring:
+  application:
+    name: gateway-service
+  # Gateway 설정
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          # 라우팅 설정
+          - id: coupon-service
+            uri: lb://coupon-service
+            predicates:
+              - Path=/api/coupon/**
+# 서버 포트
+server:
+  port: 9000
+  
+# Eureka 설정  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
